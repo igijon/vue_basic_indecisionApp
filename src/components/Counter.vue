@@ -23,7 +23,7 @@ export default {
             return this.counter * this.counter
         },
         increase(){
-            this.counter++
+            this.counter = this.counter + 1
         },
         decrease(){
             this.counter--
