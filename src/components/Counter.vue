@@ -12,15 +12,14 @@
 <script>
 export default {
     //name: 'Patito'
-    props: ['title'],
+    props: ['title','start'],
     data() {
         return {
-            counter: 5
+            counter: this.start
         }
     },
     methods: {
         getSquareValue(){
-            console.log('getSquareValue')
             return this.counter * this.counter
         },
         increase(){
@@ -33,7 +32,6 @@ export default {
     },
     computed: {
         squareCounter() {
-            console.log('squareCounter')
             return this.counter *  this.counter
         },
         customTitle() {
