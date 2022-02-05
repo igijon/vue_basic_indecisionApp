@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <counter start="15"/>
+  <counter :start="10"/>
 </template>
 
 <script>

@@ -12,7 +12,10 @@
 <script>
 export default {
     //name: 'Patito'
-    props: ['title','start'],
+    props: {
+        title: String,
+        start: Number
+    },
     data() {
         return {
             counter: this.start
