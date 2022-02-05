@@ -16,7 +16,8 @@ export default {
         title: String,
         start: {
             type: Number,
-            required: true
+            //required: true
+            default: 100
         }
     },
     data() {
