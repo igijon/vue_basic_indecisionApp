@@ -1,5 +1,5 @@
 <template>
-    <h2>Counter</h2>
+    <h2>{{ customTitle }}</h2>
 
     <p>{{ counter }} <sup>2</sup> = {{ squareCounter }}</p>
 
@@ -12,6 +12,7 @@
 <script>
 export default {
     //name: 'Patito'
+    props: ['title'],
     data() {
         return {
             counter: 5
@@ -34,6 +35,9 @@ export default {
         squareCounter() {
             console.log('squareCounter')
             return this.counter *  this.counter
+        },
+        customTitle() {
+            return this.title || 'Counter'
         }
     }
 }
