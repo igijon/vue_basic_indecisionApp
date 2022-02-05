@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <counter :start="10"/>
+  <counter title="Hola mundo" start/>
 </template>
 
 <script>

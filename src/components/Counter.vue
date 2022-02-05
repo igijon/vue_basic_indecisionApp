@@ -14,7 +14,10 @@ export default {
     //name: 'Patito'
     props: {
         title: String,
-        start: Number
+        start: {
+            type: Number,
+            required: true
+        }
     },
     data() {
         return {
