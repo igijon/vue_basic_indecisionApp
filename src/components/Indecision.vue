@@ -21,7 +21,9 @@ export default {
     },
     watch: {
         question ( value, oldValue ){
-            console.log(value.includes('?'));
+            if( !value.contains('?') ) return
+            //TODO: hacer petición HTTP
+            
         }
     }
 }
