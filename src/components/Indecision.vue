@@ -18,6 +18,11 @@ export default {
         return {
             question: 'Hola mundo'
         }
+    },
+    watch: {
+        question ( value, oldValue ){
+            console.log(value.includes('?'));
+        }
     }
 }
 </script>
