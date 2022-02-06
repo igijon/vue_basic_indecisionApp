@@ -7,7 +7,7 @@
 
       <div>
           <h2>{{ question }}</h2>
-          <h1>Si, no... pensando</h1>
+          <h1>{{ answer }}</h1>
       </div>
   </div>
 </template>
@@ -16,14 +16,27 @@
 export default {    
     data() {
         return {
-            question: 'Hola mundo'
+            question: null,
+            answer: null
+        }
+    },
+    methods: {
+        async getAnswer() {
+            this.answer = 'Pensando...'
+
+            const data = await fetch('https://yesno.wtf/api').then( r => r.json() )
+
+            console.log(data);
         }
     },
     watch: {
         question ( value, oldValue ){
-            if( !value.contains('?') ) return
-            //TODO: hacer petición HTTP
+
+            if( !value.includes('?') ) return
             
+            //TODO: realizar petición http
+            this.getAnswer()
+
         }
     }
 }
