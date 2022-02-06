@@ -7,7 +7,7 @@
 
       <div v-if="isValidQuestion">
           <h2>{{ question }}</h2>
-          <h1>{{ answer === 'yes'? 'Sí!!' : 'No!!' }}</h1>
+          <h1>{{ answer }}</h1>
       </div>
     </div>
   
@@ -29,7 +29,7 @@ export default {
 
             const { answer, image } = await fetch('https://yesno.wtf/api').then( r => r.json() )
 
-            this.answer = answer
+            this.answer = answer === 'yes' ? 'Sí!': 'No!'
             this.img = image
         }
     },
