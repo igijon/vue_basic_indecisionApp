@@ -1,5 +1,5 @@
 <template>
-  <img src="https://via.placeholder.com/250" alt="bg">
+  <img :src="img" alt="bg">
   <div class="bg-dark"></div>
   <div class="indecision-cointainer">
       <input v-model="question" type="text" placeholder="Hazme una pregunta">
@@ -17,7 +17,8 @@ export default {
     data() {
         return {
             question: null,
-            answer: null
+            answer: null,
+            img: null
         }
     },
     methods: {
@@ -26,7 +27,8 @@ export default {
 
             const { answer, image } = await fetch('https://yesno.wtf/api').then( r => r.json() )
 
-            console.log( answer );
+            this.answer = answer
+            this.img = image
         }
     },
     watch: {
@@ -34,7 +36,6 @@ export default {
 
             if( !value.includes('?') ) return
             
-            //TODO: realizar petición http
             this.getAnswer()
 
         }
