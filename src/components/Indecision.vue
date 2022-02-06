@@ -1,7 +1,7 @@
 <template>
-  <img :src="img" alt="bg">
+  <img v-if="img" :src="img" alt="bg">
   <div class="bg-dark"></div>
-  <div class="indecision-cointainer">
+    <div class="indecision-container">
       <input v-model="question" type="text" placeholder="Hazme una pregunta">
       <p>Recuerda terminar con un signo de interrogación (?)</p>
 
@@ -9,7 +9,8 @@
           <h2>{{ question }}</h2>
           <h1>{{ answer }}</h1>
       </div>
-  </div>
+    </div>
+  
 </template>
 
 <script>
@@ -53,7 +54,6 @@ export default {
         position: fixed;
         top: 0px;
         width: 100vw;
-        z-index: -1;
     }
 
     .bg-dark {
