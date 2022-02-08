@@ -15,11 +15,8 @@ describe('Example Component', () => {
     value = value + 2
 
     //Observar el resultado
-    if ( value > 10 ) {
-      //TODO: todo bien
-    } else {
-      throw `${ value } no es mayor a 10`
-    }
+    expect( value ).toBeGreaterThan( 10 )
+    //Ahora al ejecutarlo (yarn test:unit) tengo más información, me indica lo que expero y lo que recibo.
   })
 })
 
@@ -27,3 +24,5 @@ describe('Example Component', () => {
 //Saltará el error porque 7 no es mayor a 10
 
 //jest me facilitará todo esto, esto es sólo un ejemplo
+//https://jestjs.io/
+//https://jestjs.io/docs/expect
