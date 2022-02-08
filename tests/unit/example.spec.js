@@ -9,7 +9,7 @@ describe('Example Component', () => {
     //Esta función podría ser asíncrona en un momento determinado, aún no.
 
     //Preparar
-    let value = 5  //Como es un ejemplo, esto va a ser el sujeto de pruebas
+    let value = 9  //Como es un ejemplo, esto va a ser el sujeto de pruebas
 
     //Estímulo
     value = value + 2
