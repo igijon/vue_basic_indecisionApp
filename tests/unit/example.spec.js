@@ -9,7 +9,7 @@ describe('Example Component', () => {
     //Esta función podría ser asíncrona en un momento determinado, aún no.
 
     //Preparar
-    const value = 5  //Como es un ejemplo, esto va a ser el sujeto de pruebas
+    let value = 5  //Como es un ejemplo, esto va a ser el sujeto de pruebas
 
     //Estímulo
     value = value + 2
@@ -24,3 +24,4 @@ describe('Example Component', () => {
 })
 
 //para ejecutar yarn test:unit
+//Saltará el error porque 7 no es mayor a 10
