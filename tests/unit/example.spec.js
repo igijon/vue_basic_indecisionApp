@@ -25,3 +25,5 @@ describe('Example Component', () => {
 
 //para ejecutar yarn test:unit
 //Saltará el error porque 7 no es mayor a 10
+
+//jest me facilitará todo esto, esto es sólo un ejemplo
