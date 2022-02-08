@@ -23,11 +23,14 @@ describe('Counter Compoonent', () => {
 
         const wrapper = shallowMount( Counter )
 
+        //Si no existe no va a seguir ejecutándose
+        expect( wrapper.find('h2').exists() ).toBeTruthy()
+
         //Puedo buscar por id, clases... busca y retorna el primero que encuentra. Si queremos todos 
         //debemos usar findAll.
-        const h2 = wrapper.find('h2')
+        const h2Value = wrapper.find('h2').text()
 
-        expect(h2.text()).toBe('Counter')
+        expect(h2Value).toBe('Counter')
     })
 
 
