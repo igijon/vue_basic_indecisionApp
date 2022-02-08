@@ -27,8 +27,7 @@ describe('Counter Compoonent', () => {
         //debemos usar findAll.
         const h2 = wrapper.find('h2')
 
-        //Esto imprime en consola al ejecutar la prueba que tiene un HTMLHEadingElement
-        console.log(h2)
+        expect(h2.text()).toBe('Counter')
     })
 
 
