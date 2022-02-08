@@ -13,6 +13,7 @@ describe('Counter Compoonent', () => {
         //La primera vez que se ejecute indicará que se escribió un snapshot, pero sólo la primera vez
         //Se genera un archivo con el template
         expect( wrapper.html() ).toMatchSnapshot()
+        //Si falla la prueba pero el componente está bien, tengo que actualizar el snapshot con yarn test:unit -u
 
     })
 

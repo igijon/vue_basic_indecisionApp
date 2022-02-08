@@ -3,7 +3,7 @@
 
     <p>{{ counter }} <sup>2</sup> = {{ squareCounter }}</p>
 
-    <div class="buttons-container">
+    <div>
         <button @click="increase">+1</button>
         <button @click="decrease">-1</button>
     </div>
