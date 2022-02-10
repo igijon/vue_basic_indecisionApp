@@ -39,11 +39,11 @@ describe('Counter Compoonent', () => {
         const wrapper = shallowMount( Counter )
 
         //Buscamos todos los párrafosb (pTags)
-        const pTags = wrapper.findAll('p')
+        const value = wrapper.find('[data-testid="counter"]')
 
         //Haremos el expect sobre el segundo párrafo para comprobar que p sea el valor de 100
         //que es el valor por defecto
-        expect(pTags[1].text()).toBe('100')
+        expect(value.text()).toBe('100')
         //Ponemos el 100 como string, porque esto está evaluando el valor de p que es un string
     })
 
