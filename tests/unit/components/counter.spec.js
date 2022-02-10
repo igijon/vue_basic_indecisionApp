@@ -50,13 +50,13 @@ describe('Counter Compoonent', () => {
     })
 
     // Vamos a simular eventos para hacer pruebas sobre los botones
-    test('debe incrementar en 1 el valor del contador', () => {
+    test('debe incrementar en 1 el valor del contador', async () => {
 
         const wrapper = shallowMount( Counter )
 
         const increaseBtn = wrapper.find('button') //Esto me devuelve el primer botón
 
-        inscreaseBtn.trigger('click') //Con esto simulo el click
+        await increaseBtn.trigger('click') //Con esto simulo el click
 
         const value = wrapper.find('[data-testid="counter"]')
         expect(value).toBe('101') 
