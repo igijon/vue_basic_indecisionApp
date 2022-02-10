@@ -33,6 +33,8 @@ describe('Counter Compoonent', () => {
         expect(h2Value).toBe('Counter')
     })
 
+    // Esta prueba no es del todo necesaria porque 
+    // si tuviésemos el snapshot no haría falta
     test('el valor por defecto debe ser 100 en el p', () => {
 
         //wrapper
