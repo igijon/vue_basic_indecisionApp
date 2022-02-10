@@ -73,4 +73,12 @@ describe('Counter Compoonent', () => {
         const value = wrapper.find('[data-testid="counter"]').text()
         expect(value).toBe('101')
     })
+
+    test('debe establecer el valor por defecto', () => {
+        //Vamos a ver cómo leer las properties
+        //Primero vamos a mostrar las properties por consola para ver la
+        //pinta que tienen
+
+        console.log( wrapper.props() );
+    })
 })
