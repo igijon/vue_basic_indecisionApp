@@ -11,11 +11,13 @@ describe('Counter Compoonent', () => {
     // afterAll => Después de todas
     // beforeEach y afterEach ... antes y después de cada una
 
-    //Si hago esto aquí y no manipulo el DOM en casi ningún sitio (sólo en la prueba de los
-    // botones) pasarán todas ... pero no es correcto, porque si manipulo en más sitios el 
-    //DOM no pasará
-    let wrapper = shallowMount( Counter )
+    let wrapper;
 
+    beforeEach(() => {
+        wrapper = shallowMount( Counter )
+    })
+
+    
     //Si comento esta prueba dirá que tengo un snapshot obsoleto,
     //con -u se actualiza el shapshot
     /*test('debe de hacer match con el snapshot', () => {
