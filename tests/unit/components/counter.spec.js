@@ -62,5 +62,6 @@ describe('Counter Compoonent', () => {
         expect(value).toBe('101') 
         // Va a fallar porque primero se ejecuta el test y después se ejecuta la actualización del evento en el programa
 
+        //Si quiero evaluar sólo un componente hago yarn test:unit counter
     })
 })
