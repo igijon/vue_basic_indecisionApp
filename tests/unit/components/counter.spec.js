@@ -58,7 +58,7 @@ describe('Counter Compoonent', () => {
 
         await increaseBtn.trigger('click') //Con esto simulo el click
 
-        const value = wrapper.find('[data-testid="counter"]')
+        const value = wrapper.find('[data-testid="counter"]').text()
         expect(value).toBe('101') 
         // Va a fallar porque primero se ejecuta el test y después se ejecuta la actualización del evento en el programa
 
