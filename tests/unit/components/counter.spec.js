@@ -49,4 +49,18 @@ describe('Counter Compoonent', () => {
         //Ponemos el 100 como string, porque esto está evaluando el valor de p que es un string
     })
 
+    // Vamos a simular eventos para hacer pruebas sobre los botones
+    test('debe incrementar en 1 el valor del contador', () => {
+
+        const wrapper = shallowMount( Counter )
+
+        const increaseBtn = wrapper.find('button') //Esto me devuelve el primer botón
+
+        inscreaseBtn.trigger('click') //Con esto simulo el click
+
+        const value = wrapper.find('[data-testid="counter"]')
+        expect(value).toBe('101') 
+        // Va a fallar porque primero se ejecuta el test y después se ejecuta la actualización del evento en el programa
+
+    })
 })
