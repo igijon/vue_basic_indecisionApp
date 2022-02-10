@@ -54,22 +54,16 @@ describe('Counter Compoonent', () => {
 
         const wrapper = shallowMount( Counter )
 
-        const increaseBtn = wrapper.find('button') //Esto me devuelve el primer botón
+        const [ increaseBtn, decreaseBtn ] = wrapper.findAll('button') //Desestructuración
 
-        await increaseBtn.trigger('click') //Con esto simulo el click
-
-        let value = wrapper.find('[data-testid="counter"]').text()
-        expect(value).toBe('101') 
-        // Va a fallar porque primero se ejecuta el test y después se ejecuta la actualización del evento en el programa
-
-        //Si quiero evaluar sólo un componente hago yarn test:unit counter
-
-        const decreaseBtn = wrapper.findAll('button')[1] //Esto me devuelve el primer botón
+        await increaseBtn.trigger('click') 
+        await increaseBtn.trigger('click') 
+        await increaseBtn.trigger('click') 
 
         await decreaseBtn.trigger('click')
         await decreaseBtn.trigger('click')
      
-        value = wrapper.find('[data-testid="counter"]').text()
-        expect(value).toBe('99')
+        const value = wrapper.find('[data-testid="counter"]').text()
+        expect(value).toBe('101')
     })
 })
