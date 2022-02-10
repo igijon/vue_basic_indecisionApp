@@ -63,5 +63,10 @@ describe('Counter Compoonent', () => {
         // Va a fallar porque primero se ejecuta el test y después se ejecuta la actualización del evento en el programa
 
         //Si quiero evaluar sólo un componente hago yarn test:unit counter
+
+
+        //TODO: Quiero probar que si hago doble click sobre el botón decrease, el valor
+        //resultado es 99
+        expect(value).toBe('99')
     })
 })
