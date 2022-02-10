@@ -17,7 +17,7 @@ describe('Counter Compoonent', () => {
         wrapper = shallowMount( Counter )
     })
 
-    
+
     //Si comento esta prueba dirá que tengo un snapshot obsoleto,
     //con -u se actualiza el shapshot
     /*test('debe de hacer match con el snapshot', () => {
@@ -56,10 +56,6 @@ describe('Counter Compoonent', () => {
         expect(value.text()).toBe('100')
         //Ponemos el 100 como string, porque esto está evaluando el valor de p que es un string
   
-        //Esto lo vamos a poner para demostrar que el wrapper no se puede hacer así
-        // porque este resultado perdurará en memoria
-        const [ increaseBtn, decreaseBtn ] = wrapper.findAll('button') 
-        await increaseBtn.trigger('click') 
     })
 
     // Vamos a simular eventos para hacer pruebas sobre los botones
