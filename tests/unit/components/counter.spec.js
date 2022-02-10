@@ -58,15 +58,18 @@ describe('Counter Compoonent', () => {
 
         await increaseBtn.trigger('click') //Con esto simulo el click
 
-        const value = wrapper.find('[data-testid="counter"]').text()
+        let value = wrapper.find('[data-testid="counter"]').text()
         expect(value).toBe('101') 
         // Va a fallar porque primero se ejecuta el test y después se ejecuta la actualización del evento en el programa
 
         //Si quiero evaluar sólo un componente hago yarn test:unit counter
 
+        const decreaseBtn = wrapper.findAll('button')[1] //Esto me devuelve el primer botón
 
-        //TODO: Quiero probar que si hago doble click sobre el botón decrease, el valor
-        //resultado es 99
+        await decreaseBtn.trigger('click')
+        await decreaseBtn.trigger('click')
+     
+        value = wrapper.find('[data-testid="counter"]').text()
         expect(value).toBe('99')
     })
 })
