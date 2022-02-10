@@ -50,7 +50,7 @@ describe('Counter Compoonent', () => {
     })
 
     // Vamos a simular eventos para hacer pruebas sobre los botones
-    test('debe incrementar en 1 el valor del contador', async () => {
+    test('debe incrementar y decrementar el del contador', async () => {
 
         const wrapper = shallowMount( Counter )
 
