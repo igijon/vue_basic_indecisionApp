@@ -5,6 +5,17 @@ import Counter from '@/components/Counter'
 //Tengo que montarlo o renderizarlo en algún ligugar por eso tenemos que importar las test-utils
 describe('Counter Compoonent', () => {
     
+    // Dentro del describe, tenemos 4 etapas de un ciclo de vida:
+    // https://jestjs.io/docs/setup-teardown
+    // beforeAll => Se ejecuta antes de todas las pruebas
+    // afterAll => Después de todas
+    // beforeEach y afterEach ... antes y después de cada una
+
+    //Si hago esto aquí y no manipulo el DOM en casi ningún sitio (sólo en la prueba de los
+    // botones) pasarán todas ... pero no es correcto, porque si manipulo en más sitios el 
+    //DOM no pasará
+    let wrapper = shallowMount( Counter )
+
     //Si comento esta prueba dirá que tengo un snapshot obsoleto,
     //con -u se actualiza el shapshot
     /*test('debe de hacer match con el snapshot', () => {
@@ -21,8 +32,6 @@ describe('Counter Compoonent', () => {
 
     test('h2 debe tener por defecto el valor "counter"', () => {
 
-        const wrapper = shallowMount( Counter )
-
         //Si no existe no va a seguir ejecutándose
         expect( wrapper.find('h2').exists() ).toBeTruthy()
 
@@ -35,10 +44,7 @@ describe('Counter Compoonent', () => {
 
     // Esta prueba no es del todo necesaria porque 
     // si tuviésemos el snapshot no haría falta
-    test('el valor por defecto debe ser 100 en el p', () => {
-
-        //wrapper
-        const wrapper = shallowMount( Counter )
+    test('el valor por defecto debe ser 100 en el p', async () => {
 
         //Buscamos todos los párrafosb (pTags)
         const value = wrapper.find('[data-testid="counter"]')
@@ -47,12 +53,15 @@ describe('Counter Compoonent', () => {
         //que es el valor por defecto
         expect(value.text()).toBe('100')
         //Ponemos el 100 como string, porque esto está evaluando el valor de p que es un string
+  
+        //Esto lo vamos a poner para demostrar que el wrapper no se puede hacer así
+        // porque este resultado perdurará en memoria
+        const [ increaseBtn, decreaseBtn ] = wrapper.findAll('button') 
+        await increaseBtn.trigger('click') 
     })
 
     // Vamos a simular eventos para hacer pruebas sobre los botones
     test('debe incrementar y decrementar el del contador', async () => {
-
-        const wrapper = shallowMount( Counter )
 
         const [ increaseBtn, decreaseBtn ] = wrapper.findAll('button') //Desestructuración
 
