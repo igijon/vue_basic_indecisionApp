@@ -33,5 +33,14 @@ describe('Counter Compoonent', () => {
         expect(h2Value).toBe('Counter')
     })
 
+    test('el valor por defecto debe ser 100 en el p', () => {
+
+        //wrapper
+
+        //Buscamos todos los párrafos
+
+        //Haremos el expect sobre el segundo párrafo para comprobar que p sea el valor de 100
+        //que es el valor por defecto
+    })
 
 })
