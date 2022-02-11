@@ -77,8 +77,13 @@ describe('Counter Compoonent', () => {
     test('debe establecer el valor por defecto', () => {
 
         //Varias formas de hacerlo
-        const start = wrapper.props('start')
-        //const { start } = wrapper.props() // Desestructurando puedo obtener start
+        //const start = wrapper.props('start')
+        const { start } = wrapper.props() // Desestructurando puedo obtener start
     
+        const value = wrapper.find('[data-testid="counter"]').text()
+        
+        //Value va a ser de tipo texto porque lo obtenemos del componente renderizado
+        //start es de tipo number porque así está definido
+        expect( Number(value) ).toBe( start )
     })
 })
