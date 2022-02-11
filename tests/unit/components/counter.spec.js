@@ -86,4 +86,25 @@ describe('Counter Compoonent', () => {
         //start es de tipo number porque así está definido
         expect( Number(value) ).toBe( start )
     })
+
+    test('debe mostrar la prop title', () => {
+
+        //Quiero comprobar que se recibe el valor de title
+        //Leer el valor de la prop title y asegurarse que se
+        //muestra
+
+        //Si uso el wrapper definido para todas, y le añado otras 
+        //propiedades, puede afectar a otras pruebas. Si uso el otro
+        //me modificaría el snapshot
+        const wrapper = shallowMount( Counter, {
+            props: {
+                title: 'Hola mundo'
+            }
+        } )
+
+        expect ( wrapper.find('h2').text() ).toBe('Hola mundo')
+
+
+
+    })
 })
