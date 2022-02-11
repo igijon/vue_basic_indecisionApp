@@ -38,6 +38,9 @@ export default {
 
             this.isValidQuestion = false
 
+            //Para ver en las pruebas cómo se comprueban los console.log
+            console.log({ value });
+
             if( !value.includes('?') ) return
 
             this.isValidQuestion = true
