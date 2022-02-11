@@ -26,7 +26,8 @@ describe('Indecision component', () => {
         //Al establecerle el valor, se habrá producido el console.log
         //Para eso teng que crearme un espía (spy) 
 
-        expect( clgSpy ).toHaveBeenCalled()
+        expect( clgSpy ).toHaveBeenCalledTimes(2) //Puedo indicar cuántas veces quiero comprobar que se llama.
+        //Esta prueba no pasará, porque sólo se llama realmente 1
 
     })
 
