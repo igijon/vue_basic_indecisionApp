@@ -17,18 +17,20 @@ describe('Indecision component', () => {
 
     //Voy a definir algunas pruebas que quiero realizar
     test('escribir en el input no debe disparar nada', async () => {
-        //Comprobaremos que se dispara el console.log
-        //Tenemos un watcher pendiente del valor del question que está asociado al input
+        //Voy a espiar a getAnswer para demostrar que no se llama
+        //En este caso el objeto será wrapper, pero la instancia concreta de vue
+        //es wrapper.vm
+        //https://v1.test-utils.vuejs.org/api/wrapper/
+
+        const getAnswerSpy = jest.spyOn(wrapper.vm, 'getAnswer')
+        
         const input = wrapper.find('input') //Sólo hay uno
-        //Pongo el await para forzar a que se setee antes de seguir
         await input.setValue('Hola mundo') //Le establezco el valor
 
-        //Al establecerle el valor, se habrá producido el console.log
-        //Para eso teng que crearme un espía (spy) 
-
-        expect( clgSpy ).toHaveBeenCalledTimes(2) //Puedo indicar cuántas veces quiero comprobar que se llama.
-        //Esta prueba no pasará, porque sólo se llama realmente 1
-
+        
+        expect( clgSpy ).toHaveBeenCalledTimes(1) //Puedo indicar cuántas veces quiero comprobar que se llama.
+        expect( getAnswerSpy ).toHaveBeenCalledTimes(0)
+        //expect( getAnswerSpy ).not.toHaveBeenCalled()
     })
 
     test('escribir "?" debe disparar el fetch', () => {
