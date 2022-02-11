@@ -75,10 +75,10 @@ describe('Counter Compoonent', () => {
     })
 
     test('debe establecer el valor por defecto', () => {
-        //Vamos a ver cómo leer las properties
-        //Primero vamos a mostrar las properties por consola para ver la
-        //pinta que tienen
 
-        console.log( wrapper.props() );
+        //Varias formas de hacerlo
+        const start = wrapper.props('start')
+        //const { start } = wrapper.props() // Desestructurando puedo obtener start
+    
     })
 })
