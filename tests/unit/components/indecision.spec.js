@@ -58,8 +58,12 @@ describe('Indecision component', () => {
 
         await wrapper.vm.getAnswer() //Hacemos una llamada real y esperamos a que termine el procedimiento
 
-        console.log( wrapper.vm.img )
-        console.log( wrapper.vm.answer )
+        const img = wrapper.find('img')
+
+        expect ( img.exists() ).toBeTruthy()
+        expect( wrapper.vm.img ).toBe('https://yesno.wtf/assets/yes/2.gif')
+        expect( wrapper.vm.answer ).toBe('Sí!')
+
     })
 
     test('pruebas en getAnswer - Fallo en el API', () => {
