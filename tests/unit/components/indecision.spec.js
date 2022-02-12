@@ -50,8 +50,16 @@ describe('Indecision component', () => {
         expect( getAnswerSpy ).toHaveBeenCalled()
     })
 
-    test('pruebas en getAnswer', () => {
+    test('pruebas en getAnswer', async () => {
 
+        //Comprobaremos que en cierto punto está pensando
+        //que después en un punto de la respuesta está devolviendo la
+        //respuesta en español...
+
+        await wrapper.vm.getAnswer() //Hacemos una llamada real y esperamos a que termine el procedimiento
+
+        console.log( wrapper.vm.img )
+        console.log( wrapper.vm.answer )
     })
 
     test('pruebas en getAnswer - Fallo en el API', () => {
