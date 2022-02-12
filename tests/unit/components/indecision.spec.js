@@ -6,7 +6,17 @@ describe('Indecision component', () => {
     let wrapper
     let clgSpy
 
-    global.fetch = jest.fn() 
+    //Implementación de fetch. Tengo que obtener una promesa para enlazar con then
+    //Necesito resolver también en el mock el método json 
+    global.fetch = jest.fn( () => Promise.resolve({
+       json: () => Promise.resolve({
+           //Aquí tenemos que poner lo que la petición pudiera devolver
+           //Lo miramos en el API de https://yesno.wtf/api
+            answer: 'yes',
+            forced: false,
+            image: 'https://yesno.wtf/assets/yes/2.gif'
+       })
+    }) ) 
 
     beforeEach(() => {
         wrapper = shallowMount( Indecision )
